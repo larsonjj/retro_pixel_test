@@ -9,6 +9,10 @@ use bevy::render::render_asset::RenderAssets;
 use bevy::render::render_resource::{AsBindGroup, AsBindGroupShaderType, ShaderRef, ShaderType};
 use bevy::sprite::{Material2d, Material2dPlugin, MaterialMesh2dBundle};
 
+mod pixel_bundle;
+
+use pixel_bundle::*;
+
 pub const WINDOW_RESOLUTION_WIDTH: f32 = 960.;
 pub const WINDOW_RESOLUTION_HEIGHT: f32 = 576.;
 pub const REFERENCE_RESOLUTION_WIDTH: f32 = 320.;
