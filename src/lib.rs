@@ -130,6 +130,9 @@ bitflags::bitflags! {
 #[derive(Component)]
 struct Player;
 
+#[derive(Component)]
+struct Enemy;
+
 // Spawn an entity using `CustomMaterial`.
 fn setup_player(
     mut commands: Commands,
@@ -153,6 +156,31 @@ fn setup_player(
             ..Default::default()
         },
         Player,
+    ));
+
+    // commands.spawn((
+    //     PixelSpriteBundle {
+    //         transform: Transform {
+    //             translation: Vec3::new(20.0, 0.0, 0.0),
+    //             scale: Vec3::new(16.0, 16.0, 0.0),
+    //             rotation: Quat::IDENTITY,
+    //         },
+    //         material: materials.add(CustomMaterial {
+    //             color: Color::RED,
+    //             texture: Some(asset_server.load("textures/enemy_proto.png")),
+    //         }),
+    //         ..Default::default()
+    //     },
+    //     Enemy,
+    // ));
+
+    commands.spawn((
+        SpriteBundle {
+            texture: asset_server.load("textures/enemy_proto.png"),
+            transform: Transform::from_xyz(20.0, 0.0, 0.0),
+            ..Default::default()
+        },
+        Enemy,
     ));
 }
 

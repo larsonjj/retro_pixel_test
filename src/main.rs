@@ -5,7 +5,6 @@ use bevy::prelude::*;
 use bevy::window::{PresentMode, PrimaryWindow};
 use bevy::winit::WinitWindows;
 use bevy::DefaultPlugins;
-use bevy_inspector_egui::quick::WorldInspectorPlugin;
 use std::io::Cursor;
 use winit::window::Icon;
 
@@ -29,7 +28,6 @@ fn main() {
             }),
             ..default()
         }))
-        .add_plugin(WorldInspectorPlugin::new())
         // App Systems
         .add_system(set_window_icon.on_startup())
         // My Plugins

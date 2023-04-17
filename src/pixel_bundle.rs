@@ -4,11 +4,13 @@ use bevy::{
     sprite::{ColorMaterial, Sprite, TextureAtlas, TextureAtlasSprite},
 };
 
+use crate::CustomMaterial;
+
 #[derive(Bundle, Clone)]
 pub struct PixelSpriteBundle {
     pub sprite: Sprite,
     /// A handle to the material that affects the sprite texture
-    pub material: Handle<ColorMaterial>,
+    pub material: Handle<CustomMaterial>,
     pub transform: Transform,
     pub global_transform: GlobalTransform,
     pub texture: Handle<Image>,
@@ -38,7 +40,7 @@ pub struct PixelSpriteSheetBundle {
     /// The specific sprite from the texture atlas to be drawn, defaulting to the sprite at index 0.
     pub sprite: TextureAtlasSprite,
     /// A handle to the material that affects the texture atlas
-    pub material: Handle<ColorMaterial>,
+    pub material: Handle<CustomMaterial>,
     /// A handle to the texture atlas that holds the sprite images
     pub texture_atlas: Handle<TextureAtlas>,
     /// Data pertaining to how the sprite is drawn on the screen
